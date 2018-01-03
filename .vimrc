@@ -34,9 +34,9 @@ set rtp+=~/.vim/bundle/Vundle.vim
 
 " let Vundle manage Vundle, required
 " All of your Plugins must be added before the following line
-filetype plugin indent on    " required
+filetype plugin indent off    " required
 " To ignore plugin indent changes, instead use:
-filetype plugin on
+filetype plugin off
 
 " Brief help
 " :PluginList       - lists configured plugins
