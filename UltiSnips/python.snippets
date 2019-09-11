@@ -1,0 +1,23 @@
+snippet emb
+from IPython import embed; embed()
+endsnippet
+
+snippet fromic
+from icecream import ic
+endsnippet
+
+snippet imhvd
+import horovod.torch as hvd
+endsnippet
+
+snippet hvdroot
+if opt.horovod == False or opt.hvd_rank == 0:
+endsnippet
+
+
+
+snippet mkdir
+if not os.path.exists(${1:path})
+	os.makedirs($1)
+endsnippet
+
