@@ -2,25 +2,25 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-  export ZSH=/home/seil/.oh-my-zsh
+  export ZSH="$HOME/.oh-my-zsh"
 
-# Set name of the theme to load. Optionally, if you set this to "random"
-# it'll load a random theme each time that oh-my-zsh is loaded.
+# Set name of the theme to load --- if set to "random", it will
+# load a random theme each time oh-my-zsh is loaded, in which case,
+# to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="agnoster"
 
-# Set list of themes to load
-# Setting this variable when ZSH_THEME=random
-# cause zsh load theme from this variable instead of
-# looking in ~/.oh-my-zsh/themes/
-# An empty array have no effect
+# Set list of themes to pick from when loading at random
+# Setting this variable when ZSH_THEME=random will cause zsh to load
+# a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
+# If set to an empty array, this variable will have no effect.
 # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
-# Uncomment the following line to use hyphen-insensitive completion. Case
-# sensitive completion must be off. _ and - will be interchangeable.
+# Uncomment the following line to use hyphen-insensitive completion.
+# Case-sensitive completion must be off. _ and - will be interchangeable.
 # HYPHEN_INSENSITIVE="true"
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
@@ -48,19 +48,21 @@ ZSH_THEME="agnoster"
 
 # Uncomment the following line if you want to change the command execution time
 # stamp shown in the history command output.
-# The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+# You can set one of the optional three formats:
+# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+# or set a custom format using the strftime function format specifications,
+# see 'man strftime' for details.
 # HIST_STAMPS="mm/dd/yyyy"
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Which plugins would you like to load?
+# Standard plugins can be found in ~/.oh-my-zsh/plugins/*
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(
-  git
-)
+plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -92,64 +94,57 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-#
-
-alias tm="tmux"
-alias ta="tmux attach"
-alias gpustat="watch -n0.1 gpustat"
-alias smi="watch -n0.1 nvidia-smi"
-alias envs="conda info --envs"
-
-source /home/seil/packages/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-export PATH=/home/seil/.anaconda2/bin:$PATH
-#export PATH=/home/seil/.anaconda3/bin:$PATH
-
-#export PATH="/usr/local/cuda/bin:$PATH"
-export LD_LIBRARY_PATH="/usr/local/cuda/lib64/:$LD_LIBRARY_PATH"
-export CUDNN_PATH="/usr/local/cuda/lib64/libcudnn.so.6"
 
 
-alias ls='ls --color=auto --group-directories-first --hide="*.pyc"'
-export PATH="$PATH:$HOME/bin"
+HISTFILE=~/.zsh_history
+HISTSIZE=10000
+SAVEHIST=10000
+setopt appendhistory
 
-export LANGUAGE=en_US.UTF-8
+export PATH="$PATH:/usr/local/openmpi/bin"
+export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/openmpi/lib/"
+
+export NCCL_ROOT_DIR="/usr/local/nccl"
+export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/nccl/lib"
+
+
 export LANG=en_US.UTF-8
-export LC_ALL=en_US.UTF-8
-alias tenb="export CUDA_VISIBLE_DEVICES=' ' && tensorboard --logdir='.'"
-alias top='htop --d=0.1'
-alias iostat='watch -n0.1 iostat'
-alias gdrive='~/packages/gdrive-linux-x64'
+export LC_CTYPE=en_US.UTF-8
+source "$HOME/packages/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 
-export ZPLUG_HOME=~/.zplug
-source ~/.zplug/init.zsh
-zplug "greymd/tmux-xpanes"
+alias ta="tmux attach"
+alias td="tmux detach"
+alias smi="watch -n0.1 nvidia-smi"
+alias top='htop --d=0.1'
+
+alias dr="nvidia-docker run --rm -it --user="root" -v /storage2:/storage2 -v /lunit/data:/lunit/data -v /lunit/home/seilna:/lunit/home/seilna seilna/ctr:ubuntu16.04-cuda9.0-cudnn7-python3.6-pytorch0.4.0-opencv3.4.0 /usr/bin/zsh"
+alias dc="docker commit"
+alias da="docker attach"
+alias dp="docker ps | grep "seilna""
+alias di="docker images | grep "seilna""
+alias gc="git commit -m"
+alias gs="gpustat -i 0.1"
+
+
+alias tenb="tensorboard --logdir='.'"
 
 alias gpuX="export CUDA_VISIBLE_DEVICES=''"
-alias gpu0="export CUDA_VISIBLE_DEVICES=0"
-alias gpu1="export CUDA_VISIBLE_DEVICES=1"
-alias gpu2="export CUDA_VISIBLE_DEVICES=2"
-alias gpu3="export CUDA_VISIBLE_DEVICES=3"
-alias gpu4="export CUDA_VISIBLE_DEVICES=0"
-alias gpu5="export CUDA_VISIBLE_DEVICES=1"
-alias gpu6="export CUDA_VISIBLE_DEVICES=2"
-alias gpu7="export CUDA_VISIBLE_DEVICES=3"
-alias gpu8="export CUDA_VISIBLE_DEVICES=0"
-alias gpu9="export CUDA_VISIBLE_DEVICES=1"
-alias gpu10="export CUDA_VISIBLE_DEVICES=2"
-alias gpu11="export CUDA_VISIBLE_DEVICES=3"
-alias gpu12="export CUDA_VISIBLE_DEVICES=0"
-alias gpu13="export CUDA_VISIBLE_DEVICES=1"
-alias gpu14="export CUDA_VISIBLE_DEVICES=2"
-alias gpu15="export CUDA_VISIBLE_DEVICES=3"
-alias emnlp="source activate emnlp"
-alias py3="source activate py3"
+alias gpu0="export CUDA_VISIBLE_DEVICES='0'"
+alias gpu1="export CUDA_VISIBLE_DEVICES='1'"
+alias gpu2="export CUDA_VISIBLE_DEVICES='2'"
+alias gpu3="export CUDA_VISIBLE_DEVICES='3'"
+alias gpu4="export CUDA_VISIBLE_DEVICES='4'"
+alias gpu5="export CUDA_VISIBLE_DEVICES='5'"
+alias gpu6="export CUDA_VISIBLE_DEVICES='6'"
+alias gpu7="export CUDA_VISIBLE_DEVICES='7'"
 
+alias gitsave="git config credential.helper store"
+alias gcgp="git commit -m 'commit without message' && git push origin HEAD"
+alias gc="git commit -m 'commit without message'"
+alias gp="git push origin HEAD"
 
+alias wandbon="export WANDB_MODE=''"
+alias wandboff="export WANDB_MODE=dryrun"
 
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/data/seil/google-cloud-sdk/path.zsh.inc' ]; then source '/data/seil/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/data/seil/google-cloud-sdk/completion.zsh.inc' ]; then source '/data/seil/google-cloud-sdk/completion.zsh.inc'; fi
-source /home/seil/packages/zsh-autoenv/autoenv.zsh
+export SLACK_WEB_HOOK="https://hooks.slack.com/services/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"
+stty -ixon
