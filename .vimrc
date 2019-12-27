@@ -1,9 +1,6 @@
 set nocompatible
 filetype off                
 
-" set ctags
-set tags=/lunit/home/seilna/dib-cxr/tags
-
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -13,6 +10,7 @@ Plugin 'vim-scripts/indentpython.vim'
 Plugin 'bling/vim-airline'
 Plugin 'chrisbra/csv.vim'
 Plugin 'foosoft/vim-argwrap'
+Plugin 'blueyed/vim-diminactive'
 " Plugin 'vim-syntastic/syntastic'
 call vundle#end()           
 filetype plugin indent on
@@ -24,14 +22,14 @@ Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
 Plug 'valloric/youcompleteme', { 'do': 'python ./install.py --clang-completer' }
 Plug 'SirVer/ultisnips'
 Plug 'vim-airline/vim-airline-themes'
-Plugin 'blueyed/vim-diminactive'
+Plug 'psliwka/vim-smoothie'
 call plug#end()
 
 let g:pymode_python = 'python3'
 let g:pymode_options_colorcolumn = 0
 let g:pymode_lint_error_symbol = 'X'
 let g:pymode_lint_comment_symbol = '✗'
-
+let g:pymode_breakpoint_cmd = 'import ipdb; ipdb.set_trace(context=5)'
 
 
 
