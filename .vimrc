@@ -49,7 +49,9 @@ let g:UltiSnipsExpandTrigger="<Tab>"
 " let g:UltiSnipsSnippetDirectories = ['~/.vim/UltiSnips']
 let g:UltiSnipsSnippetDirectories = ['UltiSnips']
 
-let g:airline_theme='wombat'
+let g:airline_theme='simple'
+let g:airline_powerline_fonts = 1
+
 nnoremap <c-k> :ArgWrap<CR>
 inoremap <silent> <c-s> <Esc>:w<CR>
 nnoremap <silent> <c-s> :w<CR>
