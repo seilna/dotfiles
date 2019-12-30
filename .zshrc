@@ -148,6 +148,7 @@ alias task="cd $HOME/engine/task/cnn_2stage_cls"
 alias sample="cd $HOME/engine/sample_generator"
 alias config="cd $HOME/engine/config/kr"
 alias run="cd $HOME/engine && source config/kr/run.sh"
+alias pk='pkill -f "python"'
 
 alias wandbon="export WANDB_MODE=''"
 alias wandboff="export WANDB_MODE=dryrun"
