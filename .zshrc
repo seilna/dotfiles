@@ -10,6 +10,8 @@ HISTSIZE=10000
 SAVEHIST=10000
 setopt appendhistory
 
+export PYTHONPATH="$PYTHONPATH:/lunit/home/seilna/.git/executor"
+
 export PATH="$PATH:/usr/local/openmpi/bin"
 export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/openmpi/lib/"
 
@@ -52,12 +54,7 @@ alias gitsave="git config credential.helper store"
 alias gcgp="git commit -m 'commit without message' && git push origin HEAD"
 alias gc="git commit -m 'commit without message'"
 alias gp="git push origin HEAD"
-alias eng="cd $HOME/engine"
-alias bm="cd $HOME/engine/task/cnn_2stage_cls/batch_manager"
-alias task="cd $HOME/engine/task/cnn_2stage_cls"
-alias sample="cd $HOME/engine/sample_generator"
-alias config="cd $HOME/engine/config/kr"
-alias run="cd $HOME/engine && source config/kr/run.sh"
+alias eng="cd /lunit/home/seilna/.git/engine"
 alias pk='pkill -f "python"'
 alias p="python"
 alias v="vi"
