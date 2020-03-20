@@ -55,9 +55,11 @@ alias gcgp="git commit -m 'commit without message' && git push origin HEAD"
 alias gc="git commit -m 'commit without message'"
 alias gp="git push origin HEAD"
 alias eng="cd /lunit/home/seilna/.git/engine"
+alias exe="cd /lunit/home/seilna/.git/executor/executor"
 alias pk='pkill -f "python"'
 alias p="python"
 alias v="vi"
+alias s="source"
 
 alias wandbon="export WANDB_MODE=''"
 alias wandboff="export WANDB_MODE=dryrun"
