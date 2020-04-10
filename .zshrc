@@ -42,12 +42,13 @@ alias gitsave="git config credential.helper store"
 alias gcgp="git commit -m 'commit without message' && git push origin HEAD"
 alias gc="git commit -m 'commit without message'"
 alias gp="git push origin HEAD"
-alias eng="cd $HOME/.git/engine"
+alias eng="cd /lunit/home/seilna/.git/engine"
 alias exe="cd $HOME/.git/executor/executor"
 alias pk='pkill -f "python"'
 alias pktmp="pkill -f tmp"
 alias p="python"
 alias v="nvim"
+alias vi="nvim"
 alias s="source"
 
 alias won="export WANDB_MODE=''"
@@ -73,3 +74,6 @@ _fzf_compgen_dir() {
 
 bindkey '^F' fzf-completion
 bindkey '^I' $fzf_default_completion
+export PATH=$HOME/bin:$PATH
+export NCCL_ROOT_DIR="/usr/local/nccl"
+export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/nccl/lib"

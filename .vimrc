@@ -1,8 +1,13 @@
 set nocompatible
 filetype off                
 
+if has("termguicolors")
+    set termguicolors
+endif
 " set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
+
+
+set rtp+=$HOME/.nvim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'davidhalter/jedi-vim'
@@ -11,10 +16,10 @@ Plugin 'bling/vim-airline'
 Plugin 'chrisbra/csv.vim'
 Plugin 'foosoft/vim-argwrap'
 Plugin 'blueyed/vim-diminactive'
+Plugin 'rhysd/conflict-marker.vim'
 " Plugin 'vim-syntastic/syntastic'
 call vundle#end()           
 filetype plugin indent on
-
 
 call plug#begin('~/.vim/plugged')
 Plug 'heavenshell/vim-pydocstring'
@@ -23,15 +28,16 @@ Plug 'valloric/youcompleteme', { 'do': 'python ./install.py --clang-completer' }
 Plug 'SirVer/ultisnips'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'psliwka/vim-smoothie'
+Plug 'rainglow/vim'
+Plug 'RRethy/vim-illuminate'
 call plug#end()
 
+colorscheme seil
 let g:pymode_python = 'python3'
 let g:pymode_options_colorcolumn = 0
 let g:pymode_lint_error_symbol = 'X'
 let g:pymode_lint_comment_symbol = '✗'
 let g:pymode_breakpoint_cmd = 'import ipdb; ipdb.set_trace(context=5)'
-
-
 
 let g:ycm_server_python_interpreter = '/opt/conda/bin/python'
 let g:ycm_min_num_of_chars_for_completion = 1
@@ -49,8 +55,13 @@ let g:UltiSnipsExpandTrigger="<Tab>"
 " let g:UltiSnipsSnippetDirectories = ['~/.vim/UltiSnips']
 let g:UltiSnipsSnippetDirectories = ['UltiSnips']
 
-let g:airline_theme='simple'
+let g:airline_theme='bubblegum'
 let g:airline_powerline_fonts = 1
+
+let g:conflict_marker_begin = '^<<<<<<< .*$'
+let g:conflict_marker_end   = '^>>>>>>> .*$'
+
+let g:Illuminate_delay = 100
 
 nnoremap <c-k> :ArgWrap<CR>
 inoremap <silent> <c-s> <Esc>:w<CR>
