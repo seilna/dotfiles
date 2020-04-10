@@ -10,7 +10,7 @@ HISTSIZE=10000
 SAVEHIST=10000
 setopt appendhistory
 
-export PYTHONPATH="$PYTHONPATH:/lunit/home/seilna/.git/executor"
+export PYTHONPATH="$PYTHONPATH:$HOME/.git/executor"
 
 export PATH="$PATH:/usr/local/openmpi/bin"
 export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/openmpi/lib/"
@@ -26,17 +26,7 @@ alias ta="tmux attach"
 alias td="tmux detach"
 alias smi="watch -n0.1 nvidia-smi"
 alias top='htop --d=0.1'
-
-alias dr="nvidia-docker run --rm -it --user="root" -v /storage2:/storage2 -v /lunit/data:/lunit/data -v /lunit/home/seilna:/lunit/home/seilna seilna/ctr:ubuntu16.04-cuda9.0-cudnn7-python3.6-pytorch0.4.0-opencv3.4.0 /usr/bin/zsh"
-alias dc="docker commit"
-alias da="docker attach"
-alias dp="docker ps | grep "seilna""
-alias di="docker images | grep "seilna""
-alias gc="git commit -m"
 alias gs="gpustat -i 0.1"
-
-
-alias tenb="tensorboard --logdir='.'"
 
 alias gpuX="export CUDA_VISIBLE_DEVICES=''"
 alias gpu0="export CUDA_VISIBLE_DEVICES='0'"
@@ -52,15 +42,16 @@ alias gitsave="git config credential.helper store"
 alias gcgp="git commit -m 'commit without message' && git push origin HEAD"
 alias gc="git commit -m 'commit without message'"
 alias gp="git push origin HEAD"
-alias eng="cd /lunit/home/seilna/.git/engine"
-alias exe="cd /lunit/home/seilna/.git/executor/executor"
+alias eng="cd $HOME/.git/engine"
+alias exe="cd $HOME/.git/executor/executor"
 alias pk='pkill -f "python"'
+alias pktmp="pkill -f tmp"
 alias p="python"
-alias v="vi"
+alias v="nvim"
 alias s="source"
 
-alias wandbon="export WANDB_MODE=''"
-alias wandboff="export WANDB_MODE=dryrun"
+alias won="export WANDB_MODE=''"
+alias woff="export WANDB_MODE=dryrun"
 
 export SLACK_WEB_HOOK="https://hooks.slack.com/services/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"
 stty -ixon
