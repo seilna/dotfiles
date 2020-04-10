@@ -18,8 +18,6 @@ export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/openmpi/lib/"
 export NCCL_ROOT_DIR="/usr/local/nccl"
 export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/nccl/lib"
 
-export LD_PRELOAD="/usr/lib/libtcmalloc.so" 
-
 export LANG=en_US.UTF-8
 export LC_CTYPE=en_US.UTF-8
 source "$HOME/packages/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
