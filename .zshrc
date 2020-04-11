@@ -10,7 +10,7 @@ HISTSIZE=10000
 SAVEHIST=10000
 setopt appendhistory
 
-export PYTHONPATH="$PYTHONPATH:$HOME/.git/executor"
+export PYTHONPATH="$PYTHONPATH:/lunit/home/seilna/.git/executor"
 
 export PATH="$PATH:/usr/local/openmpi/bin"
 export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/openmpi/lib/"
