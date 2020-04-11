@@ -32,7 +32,7 @@ Plug 'rainglow/vim'
 Plug 'RRethy/vim-illuminate'
 call plug#end()
 
-colorscheme seil
+colorscheme seil_colorscheme
 let g:pymode_python = 'python3'
 let g:pymode_options_colorcolumn = 0
 let g:pymode_lint_error_symbol = 'X'
