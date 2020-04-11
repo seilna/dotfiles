@@ -52,8 +52,8 @@ let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
 let g:SuperTabDefaultCompletionType = '<C-n>'
 let g:UltiSnipsExpandTrigger="<Tab>"
 
-" let g:UltiSnipsSnippetDirectories = ['~/.vim/UltiSnips']
-let g:UltiSnipsSnippetDirectories = ['UltiSnips']
+let g:UltiSnipsSnippetDirectories = ['~/.vim/UltiSnips']
+" let g:UltiSnipsSnippetDirectories = ['UltiSnips']
 
 let g:airline_theme='bubblegum'
 let g:airline_powerline_fonts = 1
