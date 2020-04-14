@@ -19,3 +19,4 @@ hi ConflictMarkerEnd    guibg=#2f628e
 hi ConflictMarkerSeparator guifg=white guibg=NONE
 hi Search               guibg=#ffdd88
 hi Pmenu                guibg=#ee5577 guifg=black
+hi Blamer               guifg=#808B96
