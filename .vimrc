@@ -30,6 +30,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'psliwka/vim-smoothie'
 Plug 'rainglow/vim'
 Plug 'RRethy/vim-illuminate'
+Plug 'APZelos/blamer.nvim'
 call plug#end()
 
 colorscheme seil_colorscheme
@@ -62,6 +63,9 @@ let g:conflict_marker_begin = '^<<<<<<< .*$'
 let g:conflict_marker_end   = '^>>>>>>> .*$'
 
 let g:Illuminate_delay = 100
+
+let g:blamer_enabled = 1
+let g:blamer_delay = 100
 
 nnoremap <c-k> :ArgWrap<CR>
 inoremap <silent> <c-s> <Esc>:w<CR>
