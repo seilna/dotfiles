@@ -67,6 +67,7 @@ let g:Illuminate_delay = 100
 let g:blamer_enabled = 1
 let g:blamer_delay = 100
 
+nnoremap <c-b> :BlamerToggle<CR>
 nnoremap <c-k> :ArgWrap<CR>
 inoremap <silent> <c-s> <Esc>:w<CR>
 nnoremap <silent> <c-s> :w<CR>
