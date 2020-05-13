@@ -33,7 +33,7 @@ Plug 'RRethy/vim-illuminate'
 Plug 'APZelos/blamer.nvim'
 call plug#end()
 
-colorscheme seil_colorscheme
+colorscheme seil
 let g:pymode_python = 'python3'
 let g:pymode_options_colorcolumn = 0
 let g:pymode_lint_error_symbol = 'X'
@@ -75,7 +75,6 @@ inoremap <silent> <c-w> <Esc>:wq<CR>
 nnoremap <silent> <c-w> :wq<CR>
 inoremap <silent> <c-q> <Esc>:q!<CR>
 nnoremap <silent> <c-q> :q!<CR>
-
 
 set nu
 set ignorecase
