@@ -47,6 +47,7 @@ alias exe="cd $HOME/.git/executor/executor"
 alias pk='pkill -f "python"'
 alias pktmp="pkill -f tmp"
 alias p="python"
+alias ip="ipython"
 alias v="nvim"
 alias vi="nvim"
 alias s="source"
