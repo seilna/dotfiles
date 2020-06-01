@@ -52,6 +52,7 @@ alias v="nvim"
 alias vi="nvim"
 alias s="source"
 alias c="clear"
+alias r="rsync -avz --progress"
 
 alias won="export WANDB_MODE=''"
 alias woff="export WANDB_MODE=dryrun"
