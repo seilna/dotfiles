@@ -53,6 +53,7 @@ alias vi="nvim"
 alias s="source"
 alias c="clear"
 alias r="rsync -avz --progress --exclude='*result*' --exclude='*wandb*'"
+alias grep="grep -r --exclude-dir='*results*' --exclude-dir='*wandb*'"
 
 alias won="export WANDB_MODE=''"
 alias woff="export WANDB_MODE=dryrun"
