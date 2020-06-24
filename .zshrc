@@ -10,7 +10,7 @@ HISTSIZE=10000
 SAVEHIST=10000
 setopt appendhistory
 
-export PYTHONPATH="$PYTHONPATH:/lunit/home/seilna/.git/executor"
+export PYTHONPATH="$PYTHONPATH:$HOME/.git/executor"
 
 export PATH="$PATH:/usr/local/openmpi/bin"
 export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/openmpi/lib/"
@@ -20,7 +20,7 @@ export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/nccl/lib"
 
 export LANG=en_US.UTF-8
 export LC_CTYPE=en_US.UTF-8
-source "$HOME/packages/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+source "$HOME/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 
 alias ta="tmux attach"
 alias td="tmux detach"
@@ -42,7 +42,7 @@ alias gsave="git config credential.helper store"
 alias gcgp="git commit -m 'commit without message' && git push origin HEAD"
 alias gc="git commit -m 'commit without message'"
 alias gp="git push origin HEAD"
-alias eng="cd /lunit/home/seilna/.git/engine"
+alias eng="cd $HOME/.git/engine"
 alias exe="cd $HOME/.git/executor/executor"
 alias pk='pkill -f "python"'
 alias pktmp="pkill -f tmp"
