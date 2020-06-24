@@ -10,6 +10,7 @@ HISTSIZE=10000
 SAVEHIST=10000
 setopt appendhistory
 
+export PATH="/opt/conda/bin:$PATH"
 export PYTHONPATH="$PYTHONPATH:$HOME/.git/executor"
 
 export PATH="$PATH:/usr/local/openmpi/bin"
