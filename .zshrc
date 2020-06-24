@@ -61,10 +61,11 @@ export SLACK_WEB_HOOK="https://hooks.slack.com/services/T03AT1GQK/BHCQ35P7W/UD8B
 stty -ixon
 
 # fzf setup
-# fzf setup
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_COMPLETION_OPTS='+c -x'
 export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git --exclude wandb --exclude results'
+export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
+
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_COMPLETION_TRIGGER=''
 _fzf_compgen_path() {
