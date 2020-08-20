@@ -43,6 +43,7 @@ alias gsave="git config credential.helper store"
 alias gcgp="git commit -m 'commit without message' && git push origin HEAD"
 alias gc="git commit -m 'commit without message'"
 alias gp="git push origin HEAD"
+alias pull="git pull origin HEAD"
 alias eng="cd $HOME/.git/engine"
 alias exe="cd $HOME/.git/executor/executor"
 alias pk='pkill -f "python"'
