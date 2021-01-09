@@ -58,12 +58,16 @@ alias r="rsync -avz --progress --exclude='*result*' --exclude='*wandb*'"
 alias grep="grep -r --exclude-dir='*results*' --exclude-dir='*wandb*' --color=auto --ignore-case"
 alias won="export WANDB_MODE=''"
 alias woff="export WANDB_MODE=dryrun"
-alias remove="cd $dev && python run_scheduler.py --remove_exp_group --port=5050 --remote_workspace=/data/workspace  --user=cspark --host 106.10.38.144 --exp_group "
-alias run="cd $dev && python run_scheduler.py --port=5050 --remote_workspace=/data/workspace  --user=cspark --exp_configs_dir=config/krcfg --host 106.10.38.144 --exp_group"
-alias gen="cd $dev/config && python generate_configs.py --custom_config_dir=krcfg --generator "
 
-alias cremove="python run_scheduler.py --remove_exp_group --port=5050 --remote_workspace=/data/workspace  --user=cspark --host 106.10.38.144 --exp_group "
-alias crun="python run_scheduler.py --port=5050 --remote_workspace=/data/workspace  --user=cspark --exp_configs_dir=config/krcfg --host 106.10.38.144 --exp_group"
+# connect to scheduler
+export schedule_pem=$HOME/.ssh/schedule.pem
+export schedule_host=ec2-3-36-83-28.ap-northeast-2.compute.amazonaws.com
+export schedule_user=ubuntu
+export schedule_port=22
+
+alias cremove="python run_scheduler.py --remove_exp_group --port=$schedule_port --remote_workspace=/data/workspace  --user=$schedule_user --host $schedule_host --pem=$schedule_pem --exp_group "
+alias crun="python run_scheduler.py --port=$port --pem=$schedule_pem --remote_workspace=/data/workspace  --user=$ubuntu --exp_configs_dir=config/krcfg --host $schedule_host --exp_group"
+alias cgen="python generate_configs.py --custom_config_dir=krcfg --generator "
 alias cgen="python generate_configs.py --custom_config_dir=krcfg --generator "
 export SLACK_WEB_HOOK="https://hooks.slack.com/services/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"
 stty -ixon
